@@ -22,3 +22,6 @@ done
 
 # combine into movie
 ffmpeg -r $FPS -i $PREFIX-%06d.jpg -pix_fmt yuv420p -vcodec libx264 -crf 24 -vf scale="iw/4:ih/4" $PREFIX.mp4
+
+# Move to Movies folder (requires termux-setup-storage)
+mv $PREFIX.mp4 /storage/emulated/0/Movies/$PREFIX.mp4 
