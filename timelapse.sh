@@ -21,5 +21,4 @@ do
 done
 
 # combine into movie
-ffmpeg -r $FPS -i $PREFIX-%06d.jpg -pix_fmt yuv420p $PREFIX.mp4
-
+ffmpeg -r $FPS -i $PREFIX-%06d.jpg -pix_fmt yuv420p -vcodec libx264 -crf 24 -vf scale="iw/4:ih/4" $PREFIX.mp4
